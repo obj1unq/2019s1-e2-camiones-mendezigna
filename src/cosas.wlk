@@ -15,7 +15,7 @@ object bumblebee {
 	method transformar() { transformadoEnAuto = not transformadoEnAuto }
 	method bultos() = 2
 	method reaccionar() {
-		transformadoEnAuto = true
+		transformadoEnAuto = false
 	}
 }
 

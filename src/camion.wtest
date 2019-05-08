@@ -40,8 +40,10 @@ test "test de objetos mas peligrosos que una cosa" {
 }
 
 test "test de puede circular en ruta" {
-	assert.notThat(camion.puedeCircularEnRuta(14))
-	assert.that(camion.puedeCircularEnRuta(15))
+	
+	assert.notThat(camion.puedeCircularEnRuta(29))
+	assert.that(camion.puedeCircularEnRuta(30))
+	
 }
 
 test "test de tiene algo que pesa entre" {
