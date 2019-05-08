@@ -1,0 +1,66 @@
+import camion.*
+import cosas.*
+
+describe "test de camion" {
+
+fixture {
+	camion.cargar(bumblebee)
+}
+
+test "test de cargar" {
+	camion.cargar(bumblebee)
+	assert.equals(camion.cosas(), [bumblebee, bumblebee])
+
+}
+
+test "test de descargar"{
+	camion.descargar(bumblebee)
+	assert.equals(camion.cosas(), [])	
+}
+
+test "test de peso total"{
+	assert.equals(camion.pesoTotal(), 1800)
+}
+
+test "test de peso de la carga" {
+	assert.equals(camion.pesoDeLaCarga(), 800)
+}
+
+test "test de excedido de peso"{
+	assert.notThat(camion.excedidoDePeso())
+}
+
+test "test de objetos peligrosos" {
+	assert.equals(camion.objetosPeligrosos(14), [bumblebee])
+}
+
+test "test de objetos mas peligrosos que una cosa" {
+	camion.cargar(knightRider)
+	assert.equals(camion.objetosMasPeligrososQue(knightRider), [bumblebee])
+}
+
+test "test de puede circular en ruta" {
+	assert.notThat(camion.puedeCircularEnRuta(14))
+	assert.that(camion.puedeCircularEnRuta(15))
+}
+
+test "test de tiene algo que pesa entre" {
+	assert.that(camion.tieneAlgoQuePesaEntre(700, 900))
+}
+
+test "test de cosa mas pesada" {
+	camion.cargar(knightRider)
+	assert.equals(camion.cosaMasPesada(), bumblebee)
+}
+
+test "test de bultos" {
+	camion.cargar(knightRider)
+	assert.equals(camion.totalBultos(), 3)
+}
+
+test "test de pesos" {
+	camion.cargar(knightRider)
+	assert.equals(camion.pesos(), [800, 500])
+	
+}
+}
