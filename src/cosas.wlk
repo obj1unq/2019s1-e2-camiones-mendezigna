@@ -27,8 +27,8 @@ object paqueteLadrillos {
 	method nivelPeligrosidad() = 2
 	
 	method bultos() { 
-		return	if (cantidad < 100) { 1 }
-		else if (cantidad > 100 && cantidad < 300){ 2 }
+		return	if (cantidad <= 100) { 1 }
+		else if (cantidad > 100 && cantidad <= 300){ 2 }
 		else { 3 }
 	}
 	
