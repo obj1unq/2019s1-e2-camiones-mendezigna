@@ -94,7 +94,7 @@ object contenedorPortuario {
 	}
 	
 	method bultos() {
-		return 1 + cosas.size()
+		return 1 + cosas.sum({cosa => cosa.bultos()})
 	}
 	
 	method reaccionar() {
