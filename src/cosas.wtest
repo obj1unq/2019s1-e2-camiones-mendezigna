@@ -1,0 +1,68 @@
+import cosas.*
+
+test "test de Knight Rider" {
+
+	assert.equals(knightRider.peso(), 500)	
+	assert.equals(knightRider.nivelPeligrosidad(), 10)
+
+}
+
+test "test de bumblebee" {
+	
+	assert.equals(bumblebee.peso(), 800)	
+	assert.equals(bumblebee.nivelPeligrosidad(), 15)
+	bumblebee.transformar()
+	assert.equals(bumblebee.nivelPeligrosidad(), 30)
+	
+}
+
+test "test de paquete de ladrillos" {
+	
+	paqueteLadrillos.cantidad(100)
+	assert.equals(paqueteLadrillos.peso(), 200)
+	assert.equals(paqueteLadrillos.nivelPeligrosidad(), 2)
+	
+}
+
+test "test de arena granel" {
+	
+	arenaGranel.peso(500)
+	assert.equals(arenaGranel.peso(), 500)
+	assert.equals(arenaGranel.nivelPeligrosidad(), 1)
+
+}
+
+test "test de bateria antiaerea" {
+	
+	bateriaAntiAerea.estaConLosMisiles(false)
+	assert.equals(bateriaAntiAerea.peso(), 200)
+	assert.equals(bateriaAntiAerea.nivelPeligrosidad(), 0)
+	bateriaAntiAerea.estaConLosMisiles(true)
+	assert.equals(bateriaAntiAerea.peso(), 300)
+	assert.equals(bateriaAntiAerea.nivelPeligrosidad(), 100)
+	
+}
+
+test "test de contenedor portuario" {
+	
+	contenedorPortuario.cargar(bumblebee)
+	assert.equals(contenedorPortuario.peso(), 900)
+	assert.equals(contenedorPortuario.nivelPeligrosidad(), 15)
+	
+}
+
+test "test de residuos radioactivos" {
+	
+	residuosRadioactivos.peso(500)
+	assert.equals(residuosRadioactivos.peso(), 500)
+	assert.equals(residuosRadioactivos.nivelPeligrosidad(), 200)
+}
+
+test "test de embalaje de seguridad" {
+	
+	residuosRadioactivos.peso(500)
+	embalajeDeSeguridad.cosaAdentro(residuosRadioactivos)
+	assert.equals(embalajeDeSeguridad.peso(), 500)
+	assert.equals(embalajeDeSeguridad.nivelPeligrosidad(), 100)
+	
+}
